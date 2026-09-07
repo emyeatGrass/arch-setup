@@ -4,7 +4,7 @@ I eventually made a switch to MacOS (kind of a mistake) and wanted to save my do
 
 I did not create _everything_ myself. Some themes (.rasi), for example the rofi one, were found online and I tweaked them and added more functionality to fit my needs. I am not 100% sure I kept the author names in their respective files :(
 
-Dotfiles aren't everything. Here are the packages I remember installing:
+Here are the packages I remember installing:
 
 ### Audio & Media
 - ``pipewire``, ``pipewire-pulse``, ``pipewire-alse``, ``pipewire-jack``, ``wireplumber`` (audio stack)
