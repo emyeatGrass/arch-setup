@@ -1,23 +1,28 @@
-# My first Arch Linux Setup
+# My First Arch Linux Setup
 
-I eventually made a switch to MacOS (kind of a mistake) and wanted to save my dotfiles somewhere to keep the fruit of my efforts.
+I eventually made the switch to macOS, but I wanted to save my dotfiles to preserve the fruit of my efforts. 
 
-I did not create _everything_ myself. Some themes (.rasi), for example the rofi one, were found online and I tweaked them and added more functionality to fit my needs. I am not 100% sure I kept the author names in their respective files :(
+> **Note on Credits:** I did not create *everything* from scratch. Some themes (such as `.rasi` files for Rofi) were found online and tweaked to fit my workflow. Credit goes to the original authors, though some specific attributions may be missing in individual files.
 
-Here are the packages I remember installing:
+---
 
-### Audio & Media
-- ``pipewire``, ``pipewire-pulse``, ``pipewire-alse``, ``pipewire-jack``, ``wireplumber`` (audio stack)
-- ``pavucontrol`` (GTK audio control GUI)
-- ``playerctl`` (media key control for play/pause/next)
+## Installed Packages & Dependencies
 
-### Hyprland Ecosystem
-- ``hyprland``
-- ``waybar`` (status/menu bar)
-- ``rofi-wayland`` or ``wofi`` (app launcher but also bluetooth and wifi settings, and wallpaper changer -> see rofi scripts)
-- ``hyprpaper`` or ``swww`` or ``waypaper`` (wallpaper daemons)
-- ``mako`` or ``dunst`` or ``swaync`` (notification daemons)
+Below are the explicit package lists exported directly from the system:
 
-### Fonts
-- ``ttf-font-awesome``
-- ``ttf-jetbrains-mono-nerd``
+* 📄 [Native Package List](./pkglist_native.txt)
+* 📄 [AUR Package List](./pkglist_aur.txt)
+
+---
+
+### Core Ecosystem Highlights
+
+* **Compositor & Bar:** `hyprland`, `waybar`
+* **Launchers & Menus:** `rofi`, `wofi`
+* **Terminals:** `kitty`, `alacritty`
+* **Audio Stack:** `pipewire`, `pipewire-pulse`, `pipewire-alsa`, `pipewire-jack`, `wireplumber`
+* **Notifications & Utilities:** `dunst`, `grim`, `slurp`, `wl-clipboard`, `proton-vpn-cli`
+* **Browsers:** `zen-browser-bin`, `firefox`, `google-chrome`
+* **Fonts:** `ttf-jetbrains-mono-nerd`, `ttf-nerd-fonts-symbols-common`, `noto-fonts`, `woff2-font-awesome`
+
+---
