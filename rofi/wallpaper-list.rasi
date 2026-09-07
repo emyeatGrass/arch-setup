@@ -1,0 +1,19 @@
+@import "config.rasi"
+
+configuration {
+    show-icons: true;
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-icon, element-text ];
+    spacing: 12px;
+}
+
+element-icon {
+    size: 50px; /* Small icon size next to text */
+}
+
+element-text {
+    vertical-align: 0.5;
+}

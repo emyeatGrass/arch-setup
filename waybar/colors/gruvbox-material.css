@@ -1,0 +1,18 @@
+@define-color bg0 rgb(29, 32, 33);
+@define-color bg1 rgb(40, 40, 40);
+@define-color bg2 rgb(38, 42, 43);
+@define-color bg3 rgb(69, 64, 61);
+@define-color bg4 rgb(47, 52, 54);
+
+@define-color fg rgb(212, 190, 152);
+@define-color red rgb(234, 105, 98);
+@define-color orange rgb(231, 138, 78);
+@define-color yellow rgb(216, 166, 87);
+@define-color green rgb(169, 182, 101);
+@define-color aqua rgb(137, 180, 130);
+@define-color blue rgb(125, 174, 163);
+@define-color purple rgb(211, 134, 155);
+
+@define-color grey0 rgb(168, 153, 132);
+@define-color grey1 rgb(146, 131, 116);
+@define-color grey2 rgb(124, 111, 100);

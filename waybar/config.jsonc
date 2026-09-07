@@ -1,0 +1,171 @@
+{
+    "layer": "top",
+    "modules-left": [
+        "clock",
+        "custom/uptime"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+        // "hyprland/window"
+    ],
+    "modules-right": [
+        "group/volume",
+        "group/power",
+        "backlight",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory",
+        "disk"
+    ],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "interval": 60,
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        }
+    },
+    "custom/power_profile": {
+        "format": "{}: ",
+        "interval": 2,
+        "exec": "powerprofilesctl get",
+        "on-click": "powerprofilesctl set $(powerprofilesctl get | grep -q 'power-saver' && echo 'balanced' || echo 'power-saver')",
+        "on-click-right": "powerprofilesctl set performance",
+        "tooltip": true,
+        "tooltip-format": "Left click: toggle power-saver/balanced\nRight click: performance"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": "",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "CPU: {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": "Ram: {}%",
+        "tooltip-format": "{used:0.1f}G/{total:0.1f}G used"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "󰖩",
+        "format-ethernet": "",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) 󰖩",
+        "tooltip-format-ethernet": "{ifname}  ",
+        "tooltip-format-disconnected": "󰖪",
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%a, %d. %b %I:%M %p  }",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#EA6962'><b><u>{}</u></b></span>"
+            }
+        },
+        // "on-click": "exec zen-browser --app=https://calendar.google.com"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        // "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "#pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "group/volume": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+    "group/power": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/power_profile",
+            "battery"
+        ]
+    },
+    "disk": {
+        "interval": 30,
+        "format": "Disk: {percentage_used}%",
+        "path": "/home",
+        "unit": "GB"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "󰃝",
+            "󰃠"
+        ]
+    },
+    "custom/uptime": {
+        "format": "Run: {}",
+        "interval": 60,
+        "exec": "uptime -p | sed -e 's/up //'"
+    }
+}

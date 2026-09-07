@@ -1,0 +1,139 @@
+configuration {
+  font: "JetBrainsMono NF 12";
+  matching: "prefix";
+  tokenize: true;
+  drun-display-format: "{name}";
+}
+
+* {
+  // general
+  bg: #282828;
+  bgt: #28282899;
+  t: transparent;
+  fg: #d4be98;
+
+  selected-bg: @fg;
+  selected-fg: @bg;
+
+  // for windows
+  active: #a9b665;
+  urgent: #fb4934;
+
+  // Force global background transparency
+  background-color: @t;
+  text-color: @fg;
+}
+
+window {
+  fullscreen: true;
+  padding: 35% 30%;
+  transparency: "real";
+  background-color: @bgt;
+  border-color: @t;
+}
+
+mainbox {
+  background-color: @t;
+  children: [ inputbar, listview ];
+}
+
+listview {
+  border: 0 0 0 0;
+  padding: 23px 0 0;
+  scrollbar: true;
+  lines: 8;
+  background-color: @t;
+}
+
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: @fg;
+    handle-width: 8px;
+    padding:      0 5px;
+    background-color: @t;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @fg;
+    padding:    2px;
+    background-color: @t;
+    children:   [ prompt, textbox-prompt-sep, entry ];
+}
+
+prompt {
+    text-color: @fg;
+    background-color: @t;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        ":";
+    text-color: @fg;
+    margin:     0 0.3em 0 0;
+    background-color: @t;
+}
+
+entry {
+    placeholder: "";
+    text-color: @fg;
+    background-color: @t;
+}
+
+textbox {
+    text-color: @fg;
+    background-color: @t;
+}
+
+element {
+    border:  0;
+    padding: 4px;
+    background-color: @t;
+}
+
+/* Ensure text inside elements inherits transparent background */
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element normal.normal {
+    background-color: @t;
+    text-color:       @fg;
+}
+element normal.urgent {
+    background-color: @t;
+    text-color:       @urgent;
+}
+element normal.active {
+    background-color: @t;
+    text-color:       @active;
+}
+
+/* ADD THESE 3 ALTERNATE STYLES */
+element alternate.normal {
+    background-color: @t;
+    text-color:       @fg;
+}
+element alternate.urgent {
+    background-color: @t;
+    text-color:       @urgent;
+}
+element alternate.active {
+    background-color: @t;
+    text-color:       @active;
+}
+
+element selected.normal {
+    background-color: @selected-bg;
+    text-color:       @selected-fg;
+}
+element selected.urgent {
+    background-color: @selected-bg;
+    text-color:       @urgent;
+}
+element selected.active {
+    background-color: @selected-bg;
+    text-color:       @selected-fg;
+}
